@@ -9,7 +9,7 @@ android:orientation="vertical"
 app:layout_constraintBottom_toTopOf="parent"
 android:layout_gravity="center"
 android:background="#FFFFEBCD"
-tools:context="MainActivity">
+tools:context="com.java.movilasofar.MainActivity">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tablayout"
@@ -19,6 +19,13 @@ tools:context="MainActivity">
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/cod_barra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/ic_cod_barra"
+            android:text="Codigo de barra" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/producto"
@@ -45,13 +52,14 @@ tools:context="MainActivity">
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent">
 
     </androidx.viewpager.widget.ViewPager>
 
     <ProgressBar
         android:id="@+id/progress_bar"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        style="?android:attr/progressBarStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
@@ -59,6 +67,6 @@ tools:context="MainActivity">
         app:layout_constraintBottom_toBottomOf="@+id/viewPager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tablayout" />
+        app:layout_constraintTop_toBottomOf="@+id/tablayout"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

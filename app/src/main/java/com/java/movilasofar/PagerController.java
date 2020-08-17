@@ -18,10 +18,12 @@ public class PagerController extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position){
             case 0:
-                return new crear_producto();
+                return new barcode();
             case 1:
-                return new orden_compra();
+                return new crear_producto();
             case 2:
+                return new orden_compra();
+            case 3:
                 return new orden_pedido();
             default:
                 return null;

@@ -11,6 +11,7 @@ import android.os.SystemClock;
 import android.view.View;
 import android.widget.ProgressBar;
 
+import com.budiyev.android.codescanner.CodeScanner;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 
@@ -20,8 +21,9 @@ public class MainActivity extends AppCompatActivity {
     private Handler mHandler = new Handler();
     private TabLayout tablayout;
     private ViewPager viewPager;
-    private TabItem producto, compra, pedido;
+    private TabItem barcode, producto, compra, pedido;
     public PagerController pagerController;
+    private CodeScanner mCodeScanner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         viewPager= findViewById(R.id.viewPager);
 
+        barcode = findViewById(R.id.cod_barra);
         producto = findViewById(R.id.producto);
         compra = findViewById(R.id.compra);
         pedido = findViewById(R.id.pedido);
@@ -70,7 +73,9 @@ public class MainActivity extends AppCompatActivity {
                                     pagerController.notifyDataSetChanged();
                                 }else if (tab.getPosition()==2){
                                     pagerController.notifyDataSetChanged();
-                                }
+                                }else if (tab.getPosition()==3){
+                                    pagerController.notifyDataSetChanged();
+                            }
                             }
 
                             @Override
