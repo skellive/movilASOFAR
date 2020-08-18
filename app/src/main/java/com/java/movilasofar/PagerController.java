@@ -23,8 +23,6 @@ public class PagerController extends FragmentPagerAdapter {
                 return new crear_producto();
             case 2:
                 return new orden_compra();
-            case 3:
-                return new orden_pedido();
             default:
                 return null;
         }

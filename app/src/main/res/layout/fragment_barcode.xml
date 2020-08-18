@@ -13,8 +13,7 @@
         android:id="@+id/scanner_view"
         android:layout_width="300dp"
         android:layout_height="282dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="85dp"
         app:autoFocusButtonColor="@android:color/white"
         app:autoFocusButtonVisible="true"
         app:flashButtonColor="@android:color/white"
@@ -26,7 +25,20 @@
         app:frameCornersSize="50dp"
         app:frameSize="0.75"
         app:frameThickness="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:maskColor="#77000000" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="276dp"
+        android:layout_height="41dp"
+        android:text="coloque un código de barras dentro de la vista rectangular para escanearlo"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scanner_view"
+        app:layout_constraintVertical_bias="0.263" />
 </androidx.constraintlayout.widget.ConstraintLayout>

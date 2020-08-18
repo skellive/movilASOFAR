@@ -32,7 +32,7 @@ tools:context="com.java.movilasofar.MainActivity">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@drawable/ic_crear_producto"
-            android:text="Crear producto" />
+            android:text="Producto" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/compra"
@@ -40,13 +40,6 @@ tools:context="com.java.movilasofar.MainActivity">
             android:layout_height="wrap_content"
             android:icon="@drawable/ic_compra"
             android:text="Orden de compra" />
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/pedido"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:icon="@drawable/ic_pedido"
-            android:text="Orden de pedido" />
     </com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager.widget.ViewPager

@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private Handler mHandler = new Handler();
     private TabLayout tablayout;
     private ViewPager viewPager;
-    private TabItem barcode, producto, compra, pedido;
+    private TabItem barcode, producto, compra;
     public PagerController pagerController;
     private CodeScanner mCodeScanner;
 
@@ -29,16 +29,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        tablayout = (TabLayout)findViewById(R.id.tablayout);
 
-        progressBar = (ProgressBar)findViewById(R.id.progress_bar);
+        //Icono en el action bar
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.mipmap.ic_launcher_foreground);
+
+        tablayout = findViewById(R.id.tablayout);
+
+        progressBar = findViewById(R.id.progress_bar);
 
         viewPager= findViewById(R.id.viewPager);
 
         barcode = findViewById(R.id.cod_barra);
         producto = findViewById(R.id.producto);
         compra = findViewById(R.id.compra);
-        pedido = findViewById(R.id.pedido);
 
         new Thread(new Runnable() {
             @Override
@@ -73,9 +77,7 @@ public class MainActivity extends AppCompatActivity {
                                     pagerController.notifyDataSetChanged();
                                 }else if (tab.getPosition()==2){
                                     pagerController.notifyDataSetChanged();
-                                }else if (tab.getPosition()==3){
-                                    pagerController.notifyDataSetChanged();
-                            }
+                                }
                             }
 
                             @Override

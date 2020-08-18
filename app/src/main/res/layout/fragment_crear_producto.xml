@@ -10,27 +10,27 @@
         android:id="@+id/categoria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="85dp"
+        android:layout_marginTop="83dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:text="Categoria:"
         app:layout_constraintEnd_toStartOf="@+id/txtCategoria"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+    <Spinner
         android:id="@+id/txtCategoria"
         android:layout_width="178dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="75dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <EditText
         android:id="@+id/txtSubcategoria"
         android:layout_width="178dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="24dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="14dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtCategoria" />
 
@@ -38,7 +38,7 @@
         android:id="@+id/subcategoria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="17dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:text="Subcategoria:"
@@ -48,8 +48,8 @@
     <EditText
         android:id="@+id/txtArticulo"
         android:layout_width="178dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="24dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="14dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtSubcategoria" />
 
@@ -57,7 +57,7 @@
         android:id="@+id/Articulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="18dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:text="Articulo:"
@@ -67,7 +67,7 @@
         android:id="@+id/presentacion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="22dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="36dp"
         android:text="Presentacion:"
@@ -76,8 +76,8 @@
     <EditText
         android:id="@+id/txtPresentacion"
         android:layout_width="178dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="24dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="14dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtArticulo" />
 
@@ -85,7 +85,7 @@
         android:id="@+id/Medida"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:text="Medida:"
@@ -95,37 +95,54 @@
     <EditText
         android:id="@+id/txtMedida"
         android:layout_width="178dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="24dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="14dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtPresentacion" />
+    <TextView
+        android:id="@+id/Producto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:text="Porducto:"
+        app:layout_constraintEnd_toStartOf="@+id/txtMedida"
+        app:layout_constraintTop_toBottomOf="@+id/Medida" />
+
+    <EditText
+        android:id="@+id/txtProducto"
+        android:layout_width="178dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtMedida" />
 
     <TextView
         android:id="@+id/Proveedor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="18dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:text="Proveedor:"
         app:layout_constraintEnd_toStartOf="@+id/txtProveedor"
-        app:layout_constraintTop_toBottomOf="@+id/Medida" />
+        app:layout_constraintTop_toBottomOf="@+id/Producto" />
 
-    <EditText
+    <Spinner
         android:id="@+id/txtProveedor"
         android:layout_width="178dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="24dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="14dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtMedida" />
+        app:layout_constraintTop_toBottomOf="@+id/txtProducto"  />
 
     <TextView
         android:id="@+id/cant_empaque"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_width="82dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="13dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginRight="56dp"
         android:text="Cantidad por empaque:"
         app:layout_constraintEnd_toStartOf="@+id/txt_cant_num_empaque"
         app:layout_constraintTop_toBottomOf="@+id/Proveedor" />
@@ -133,28 +150,26 @@
     <EditText
         android:id="@+id/txt_cant_num_empaque"
         android:layout_width="50dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="24dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="14dp"
         android:layout_marginEnd="28dp"
         android:layout_marginRight="28dp"
         app:layout_constraintEnd_toStartOf="@+id/txt_cant_empaque"
         app:layout_constraintTop_toBottomOf="@+id/txtProveedor" />
-
-    <EditText
+    <Spinner
         android:id="@+id/txt_cant_empaque"
         android:layout_width="100dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="24dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="14dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtProveedor" />
+        app:layout_constraintTop_toBottomOf="@+id/txtProveedor"/>
 
     <TextView
         android:id="@+id/unidadxempaque"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_width="87dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
         android:text="Unidades por empaque:"
         app:layout_constraintEnd_toStartOf="@+id/txt_num_uni_empaque"
         app:layout_constraintTop_toBottomOf="@+id/cant_empaque" />
@@ -162,21 +177,18 @@
     <EditText
         android:id="@+id/txt_num_uni_empaque"
         android:layout_width="50dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="28dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="28dp"
-        android:layout_marginRight="20dp"
-        app:layout_constraintEnd_toStartOf="@+id/txt_uni_"
-        app:layout_constraintTop_toBottomOf="@+id/txt_cant_empaque" />
+        app:layout_constraintEnd_toStartOf="@+id/txt_uni_empaque"
+        app:layout_constraintTop_toBottomOf="@+id/txt_cant_num_empaque" />
 
-    <EditText
-        android:id="@+id/txt_uni_"
-        android:layout_width="100dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginRight="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_cant_empaque" />
+    <Spinner
+    android:id="@+id/txt_uni_empaque"
+    android:layout_width="100dp"
+    android:layout_height="25dp"
+    android:layout_marginTop="16dp"
+    app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_cant_empaque"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
