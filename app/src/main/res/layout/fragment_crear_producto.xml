@@ -10,9 +10,8 @@
         android:id="@+id/categoria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="83dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="28dp"
         android:text="Categoria:"
         app:layout_constraintEnd_toStartOf="@+id/txtCategoria"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,8 +20,8 @@
         android:id="@+id/txtCategoria"
         android:layout_width="178dp"
         android:layout_height="25dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="4dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="152dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,9 +29,19 @@
         android:id="@+id/txtSubcategoria"
         android:layout_width="178dp"
         android:layout_height="25dp"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="152dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtCategoria" />
+
+    <EditText
+        android:id="@+id/txtArticulo"
+        android:layout_width="178dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="152dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtSubcategoria" />
 
     <TextView
         android:id="@+id/subcategoria"
@@ -44,14 +53,6 @@
         android:text="Subcategoria:"
         app:layout_constraintEnd_toStartOf="@+id/txtSubcategoria"
         app:layout_constraintTop_toBottomOf="@+id/categoria" />
-
-    <EditText
-        android:id="@+id/txtArticulo"
-        android:layout_width="178dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="14dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtSubcategoria" />
 
     <TextView
         android:id="@+id/Articulo"
@@ -73,11 +74,13 @@
         android:text="Presentacion:"
         app:layout_constraintEnd_toStartOf="@+id/txtPresentacion"
         app:layout_constraintTop_toBottomOf="@+id/Articulo" />
+
     <EditText
         android:id="@+id/txtPresentacion"
         android:layout_width="178dp"
         android:layout_height="25dp"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="152dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtArticulo" />
 
@@ -97,6 +100,7 @@
         android:layout_width="178dp"
         android:layout_height="25dp"
         android:layout_marginTop="14dp"
+        android:layout_marginEnd="152dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtPresentacion" />
     <TextView
@@ -114,7 +118,8 @@
         android:id="@+id/txtProducto"
         android:layout_width="178dp"
         android:layout_height="25dp"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="152dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtMedida" />
 
@@ -134,8 +139,9 @@
         android:layout_width="178dp"
         android:layout_height="25dp"
         android:layout_marginTop="14dp"
+        android:layout_marginEnd="152dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtProducto"  />
+        app:layout_constraintTop_toBottomOf="@+id/txtProducto" />
 
     <TextView
         android:id="@+id/cant_empaque"
@@ -156,13 +162,15 @@
         android:layout_marginRight="28dp"
         app:layout_constraintEnd_toStartOf="@+id/txt_cant_empaque"
         app:layout_constraintTop_toBottomOf="@+id/txtProveedor" />
+
     <Spinner
         android:id="@+id/txt_cant_empaque"
         android:layout_width="100dp"
         android:layout_height="25dp"
         android:layout_marginTop="14dp"
+        android:layout_marginEnd="152dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtProveedor"/>
+        app:layout_constraintTop_toBottomOf="@+id/txtProveedor" />
 
     <TextView
         android:id="@+id/unidadxempaque"
@@ -184,11 +192,12 @@
         app:layout_constraintTop_toBottomOf="@+id/txt_cant_num_empaque" />
 
     <Spinner
-    android:id="@+id/txt_uni_empaque"
-    android:layout_width="100dp"
-    android:layout_height="25dp"
-    android:layout_marginTop="16dp"
-    app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_cant_empaque"/>
+        android:id="@+id/txt_uni_empaque"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="152dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_cant_empaque" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

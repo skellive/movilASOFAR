@@ -39,7 +39,7 @@
         android:layout_width="276dp"
         android:layout_height="41dp"
         android:layout_marginBottom="292dp"
-        android:text="Su codigo de barras es:"
+        android:text=""
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

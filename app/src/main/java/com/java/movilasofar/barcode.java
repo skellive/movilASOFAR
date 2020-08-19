@@ -1,5 +1,6 @@
 package com.java.movilasofar;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -68,12 +69,13 @@ public class barcode extends Fragment {
         return root;
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
         super.onActivityResult(requestCode, resultCode, data);
 
         IntentResult result= IntentIntegrator.parseActivityResult(requestCode,resultCode,data);
-            if(result !=null)
+            if(result != null)
                 if (result.getContents() != null){
                     tvBarCode.setText("Su codigo de barra es: " + result.getContents());
                 }else{
@@ -85,11 +87,8 @@ public class barcode extends Fragment {
         @Override
         public void onClick(View v) {
 
-            switch (v.getId()) {
-                case R.id.btnScanner:
-                    new IntentIntegrator (getActivity()).initiateScan();
-                    break;
-
+            if (v.getId() == R.id.btnScanner) {
+                new IntentIntegrator(getActivity()).initiateScan();
             }
         }
     };
