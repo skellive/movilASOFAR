@@ -1,12 +1,21 @@
 package com.java.movilasofar;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,20 +32,12 @@ public class barcode extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    public Button btnScanner;
+    public TextView tvBarCode;
+    public Context c;
 
-    public barcode() {
-        // Required empty public constructor
-    }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment barcode.
-     */
-    // TODO: Rename and change types and number of parameters
+
     public static barcode newInstance(String param1, String param2) {
         barcode fragment = new barcode();
         Bundle args = new Bundle();
@@ -46,19 +47,51 @@ public class barcode extends Fragment {
         return fragment;
     }
 
-    @Override
+   @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_barcode, container, false);
+        View root = inflater.inflate(R.layout.fragment_barcode, container, false);
+        c = root.getContext();
+        btnScanner = root.findViewById(R.id.btnScanner);
+        tvBarCode = root.findViewById(R.id.tvBarCode);
+
+        btnScanner.setOnClickListener(mOnClickListener);
+
+        return root;
     }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
+        super.onActivityResult(requestCode, resultCode, data);
+
+        IntentResult result= IntentIntegrator.parseActivityResult(requestCode,resultCode,data);
+            if(result !=null)
+                if (result.getContents() != null){
+                    tvBarCode.setText("Su codigo de barra es: " + result.getContents());
+                }else{
+                    tvBarCode.setText("Error al escanear el codigo de barras");
+                }
+    }
+
+    public View.OnClickListener mOnClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+            switch (v.getId()) {
+                case R.id.btnScanner:
+                    new IntentIntegrator (getActivity()).initiateScan();
+                    break;
+
+            }
+        }
+    };
+
 }

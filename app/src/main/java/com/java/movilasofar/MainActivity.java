@@ -14,6 +14,7 @@ import android.widget.ProgressBar;
 import com.budiyev.android.codescanner.CodeScanner;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
+import com.google.zxing.integration.android.IntentIntegrator;
 
 public class MainActivity extends AppCompatActivity {
     private ProgressBar progressBar;
@@ -24,6 +25,9 @@ public class MainActivity extends AppCompatActivity {
     private TabItem barcode, producto, compra;
     public PagerController pagerController;
     private CodeScanner mCodeScanner;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,4 +102,5 @@ public class MainActivity extends AppCompatActivity {
         }).start();
 
     }
+
 }
