@@ -9,7 +9,7 @@ android:orientation="vertical"
 app:layout_constraintBottom_toTopOf="parent"
 android:layout_gravity="center"
 android:background="#FFFFEBCD"
-tools:context="com.java.movilasofar.MainActivity">
+tools:context="com.java.movilasofar.vista.MainActivity">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tablayout"

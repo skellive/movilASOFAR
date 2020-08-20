@@ -1,4 +1,4 @@
-package com.java.movilasofar;
+package com.java.movilasofar.vista;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,7 +14,7 @@ import android.widget.ProgressBar;
 import com.budiyev.android.codescanner.CodeScanner;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
-import com.google.zxing.integration.android.IntentIntegrator;
+import com.java.movilasofar.R;
 
 public class MainActivity extends AppCompatActivity {
     private ProgressBar progressBar;

@@ -1,6 +1,5 @@
-package com.java.movilasofar;
+package com.java.movilasofar.vista;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,10 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+import com.java.movilasofar.R;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -68,12 +67,21 @@ public class barcode extends Fragment {
 
         return root;
     }
+    public View.OnClickListener mOnClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()){
+                case R.id.btnScanner:
+                    new IntentIntegrator(getActivity()).initiateScan();
+                    break;
+            }
+        }
+    };
 
-    @SuppressLint("SetTextI18n")
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
         super.onActivityResult(requestCode, resultCode, data);
-
         IntentResult result= IntentIntegrator.parseActivityResult(requestCode,resultCode,data);
             if(result != null)
                 if (result.getContents() != null){
@@ -83,14 +91,6 @@ public class barcode extends Fragment {
                 }
     }
 
-    public View.OnClickListener mOnClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
 
-            if (v.getId() == R.id.btnScanner) {
-                new IntentIntegrator(getActivity()).initiateScan();
-            }
-        }
-    };
 
 }

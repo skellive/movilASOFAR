@@ -1,4 +1,4 @@
-package com.java.movilasofar;
+package com.java.movilasofar.vista;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

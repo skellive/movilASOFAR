@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.java.movilasofar.crear_producto">
+    tools:context="com.java.movilasofar.vista.crear_producto">
 
     <TextView
         android:id="@+id/categoria"
