@@ -4,21 +4,28 @@ import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.java.movilasofar.modelo.Proveedor;
 import com.loopj.android.http.*;
-
 import com.java.movilasofar.R;
-
 import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import cz.msebera.android.httpclient.Header;
 
@@ -29,7 +36,9 @@ public class crear_producto extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private Spinner spinnerProveedor;
     public Context context;
-    private AsyncHttpClient cliente;
+    public AsyncHttpClient cliente;
+    List<String> listaProveedor_id;
+    private ArrayList<String> listarProveedor_nombre;
     public crear_producto() {
         // Required empty public constructor
     }
@@ -52,15 +61,17 @@ public class crear_producto extends Fragment {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_crear_producto, container, false);
         context = root.getContext();
-        spinnerProveedor =  root.findViewById(R.id.txtProveedor);
+       spinnerProveedor =  root.findViewById(R.id.txtProveedor);
+       List<String> listaProveedor_id = null;
+       List<String> listarProveedor_nombre = null;
+      cliente = new AsyncHttpClient();
         llenarProveedor();
-        cliente = new AsyncHttpClient();
 
         return root;
     }
 
     private void llenarProveedor(){
-        String url = "http://192.168.1.5:8000/Asofarphp/producto/consultas/Proveedor.php";
+     /*   String url = "http://192.168.1.5:8000/Asofarphp/producto/consultas/Proveedor.php";
         cliente.post(url, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
@@ -73,13 +84,38 @@ public class crear_producto extends Fragment {
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
 
             }
-        });
+        });*/
+
+       RequestQueue queue = Volley.newRequestQueue(getActivity());
+        String url = "http://192.168.1.5:8000/Asofarphp/producto/consultas/Proveedor.php";
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, "http://192.168.1.5:8000/Asofarphp/producto/consultas/Proveedor.php", new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                if (response.length() > 0) {
+                    try {
+                        JSONArray jsonArray = new JSONArray(response);
+                        cargarProveedor(jsonArray);
+
+                    } catch (JSONException e) {
+                        Toast.makeText(getActivity(), e.toString(), Toast.LENGTH_LONG).show();
+                    }
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getActivity(), error.toString(), Toast.LENGTH_LONG).show();
+            }
+        }
+        );
+
+        queue.add(stringRequest);
 
     }
 
 
-    private void cargarProveedor(String respuesta){
-        ArrayList<Proveedor> lista = new ArrayList<Proveedor>();
+    private void cargarProveedor(JSONArray jsonArray){
+       /* ArrayList<Proveedor> lista = new ArrayList<Proveedor>();
         try {
             JSONArray jsonArreglo = new JSONArray(respuesta);
 
@@ -95,7 +131,23 @@ public class crear_producto extends Fragment {
         }catch (Exception e){
             e.printStackTrace();
 
+        } */
+
+       listaProveedor_id = new ArrayList<String>();
+        listarProveedor_nombre = new ArrayList<String>();
+        for (int i=0; i<jsonArray.length(); i++){
+            try {
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                String id_proveedor = jsonObject.getString("id_proveedor");
+                String nombre = jsonObject.getString("nombre");
+                listaProveedor_id.add(id_proveedor);
+                listarProveedor_nombre.add(nombre);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         }
+        ArrayAdapter<String> adapterProveedor = new ArrayAdapter<String>(getActivity(), R.layout.support_simple_spinner_dropdown_item, listarProveedor_nombre);
+        spinnerProveedor.setAdapter(adapterProveedor);
 
 
     }

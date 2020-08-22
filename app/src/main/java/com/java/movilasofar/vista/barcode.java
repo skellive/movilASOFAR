@@ -67,16 +67,7 @@ public class barcode extends Fragment {
 
         return root;
     }
-    public View.OnClickListener mOnClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            switch (v.getId()){
-                case R.id.btnScanner:
-                    new IntentIntegrator(getActivity()).initiateScan();
-                    break;
-            }
-        }
-    };
+
 
 
     @Override
@@ -90,6 +81,17 @@ public class barcode extends Fragment {
                     tvBarCode.setText("Error al escanear el codigo de barras");
                 }
     }
+
+    public View.OnClickListener mOnClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()){
+                case R.id.btnScanner:
+                    new IntentIntegrator(getActivity()).initiateScan();
+                    break;
+            }
+        }
+    };
 
 
 

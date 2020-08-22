@@ -224,14 +224,27 @@
         app:layout_constraintTop_toBottomOf="@+id/txtSubtotal" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="137dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="480dp"
-        android:layout_marginEnd="252dp"
+        android:id="@+id/btnSave"
+        android:layout_width="121dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="508dp"
         android:text="Guardar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.302"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnSync2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sincronizar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.532"
+        app:layout_constraintStart_toEndOf="@+id/btnSave"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.629" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
