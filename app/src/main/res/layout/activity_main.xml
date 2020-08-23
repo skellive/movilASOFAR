@@ -18,28 +18,32 @@ tools:context="com.java.movilasofar.vista.MainActivity">
         android:background="@android:color/holo_red_light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_scrollFlags="scroll|enterAlways">
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/cod_barra"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@drawable/ic_cod_barra"
-            android:text="Codigo de barra" />
+            android:text="Codigo de barra"
+            app:layout_scrollFlags="scroll|enterAlways" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/producto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@drawable/ic_crear_producto"
-            android:text="Producto" />
+            android:text="Producto"
+            app:layout_scrollFlags="scroll|enterAlways" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/compra"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@drawable/ic_compra"
-            android:text="Orden de compra" />
+            android:text="Orden de compra"
+            app:layout_scrollFlags="scroll|enterAlways" />
     </com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager.widget.ViewPager

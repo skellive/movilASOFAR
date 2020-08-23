@@ -14,13 +14,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="180dp"
-        android:layout_marginTop="10dp"
         android:layout_marginEnd="180dp"
+        android:layout_marginBottom="84dp"
         android:text="Haga click para escanear"
         app:layout_constraintBottom_toTopOf="@+id/tvBarCode"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/btnScanner"
@@ -38,11 +40,11 @@
         android:id="@+id/tvBarCode"
         android:layout_width="276dp"
         android:layout_height="41dp"
-        android:layout_marginBottom="292dp"
+        android:layout_marginBottom="204dp"
         android:text=""
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.636"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
