@@ -26,15 +26,14 @@ tools:context="com.java.movilasofar.vista.MainActivity">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@drawable/ic_cod_barra"
-            android:text="Codigo de barra"
-            app:layout_scrollFlags="scroll|enterAlways" />
+            android:text="@string/codigo_de_barra" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/producto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@drawable/ic_crear_producto"
-            android:text="Producto"
+            android:text="@string/producto"
             app:layout_scrollFlags="scroll|enterAlways" />
 
         <com.google.android.material.tabs.TabItem
@@ -42,7 +41,7 @@ tools:context="com.java.movilasofar.vista.MainActivity">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@drawable/ic_compra"
-            android:text="Orden de compra"
+            android:text="@string/orden_de_compra"
             app:layout_scrollFlags="scroll|enterAlways" />
     </com.google.android.material.tabs.TabLayout>
 
