@@ -1,6 +1,9 @@
 package com.java.movilasofar.vista;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+
 import androidx.appcompat.app.AppCompatActivity;
 import com.java.movilasofar.R;
 
@@ -12,6 +15,8 @@ public class list_productos_seleccionar extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_productos_seleccionar);
+        Intent intent = getIntent();
+        intent.getAction();
     }
 
 
