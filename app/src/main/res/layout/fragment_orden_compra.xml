@@ -227,31 +227,42 @@
         android:id="@+id/btnSave"
         android:layout_width="121dp"
         android:layout_height="46dp"
-        android:layout_marginStart="124dp"
+        android:layout_marginStart="112dp"
         android:text="Guardar"
         app:layout_constraintBottom_toBottomOf="@+id/btnSync2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/list_producto"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.578" />
 
     <Button
         android:id="@+id/btnSync2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="12dp"
         android:text="Sincronizar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.276"
+        app:layout_constraintHorizontal_bias="0.438"
         app:layout_constraintStart_toEndOf="@+id/btnSave"
         app:layout_constraintTop_toBottomOf="@+id/list_producto" />
 
+    <Button
+        android:id="@+id/btnAgreProducts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AGREGAR PRODUCTOS"
+        app:layout_constraintBottom_toTopOf="@+id/list_producto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txttotal" />
+
     <ListView
         android:id="@+id/list_producto"
-        android:layout_width="396dp"
-        android:layout_height="161dp"
+        android:layout_width="414dp"
+        android:layout_height="188dp"
         android:layout_marginTop="48dp"
-        android:layout_marginEnd="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txttotal" />
 
 

@@ -59,11 +59,12 @@ public class barcode extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_barcode, container, false);
-        c = root.getContext();
         btnScanner = root.findViewById(R.id.btnScanner);
         tvBarCode = root.findViewById(R.id.tvBarCode);
 
         btnScanner.setOnClickListener(mOnClickListener);
+        c = root.getContext();
+
 
         return root;
     }

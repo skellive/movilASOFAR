@@ -87,7 +87,6 @@ public class crear_producto extends Fragment {
         });*/
 
        RequestQueue queue = Volley.newRequestQueue(getActivity());
-        String url = "http://192.168.1.5:8000/Asofarphp/producto/consultas/Proveedor.php";
         StringRequest stringRequest = new StringRequest(Request.Method.GET, "http://192.168.1.5:8000/Asofarphp/producto/consultas/Proveedor.php", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
