@@ -7,6 +7,28 @@
     tools:context="com.java.movilasofar.vista.crear_producto">
 
     <TextView
+        android:id="@+id/cod_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="28dp"
+        android:text="Codigo:"
+        app:layout_constraintBottom_toTopOf="@+id/categoria"
+        app:layout_constraintEnd_toStartOf="@+id/codigoProlabel"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/codigoProlabel"
+        android:layout_width="178dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="152dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtCategoria"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.72" />
+
+    <TextView
         android:id="@+id/categoria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -64,6 +86,7 @@
         android:text="Articulo:"
         app:layout_constraintEnd_toStartOf="@+id/txtArticulo"
         app:layout_constraintTop_toBottomOf="@+id/subcategoria" />
+
     <TextView
         android:id="@+id/presentacion"
         android:layout_width="wrap_content"
@@ -103,6 +126,7 @@
         android:layout_marginEnd="152dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtPresentacion" />
+
     <TextView
         android:id="@+id/Producto"
         android:layout_width="wrap_content"

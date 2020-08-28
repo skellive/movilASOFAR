@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
+
 import com.java.movilasofar.R;
 
 public class list_productos_seleccionar extends AppCompatActivity {

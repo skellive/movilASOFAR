@@ -66,7 +66,8 @@ public class orden_compra extends Fragment {
     public View.OnClickListener mOnClickListener_agregar = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(getActivity(), list_productos_seleccionar.class);
+            Intent intent = new Intent(orden_compra.this.getContext(),
+                    list_productos_seleccionar.class);
             startActivity(intent);
         }
     };

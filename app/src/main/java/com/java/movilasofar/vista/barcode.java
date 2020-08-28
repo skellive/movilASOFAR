@@ -11,7 +11,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
@@ -62,7 +64,12 @@ public class barcode extends Fragment {
         btnScanner = root.findViewById(R.id.btnScanner);
         tvBarCode = root.findViewById(R.id.tvBarCode);
 
-        btnScanner.setOnClickListener(mOnClickListener);
+        btnScanner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                escanear();
+            }
+        });
         c = root.getContext();
 
 
@@ -70,19 +77,44 @@ public class barcode extends Fragment {
     }
 
 
+    public void escanear(){
+        IntentIntegrator intent = IntentIntegrator.forSupportFragment(barcode.this);
+        intent.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES);
+        intent.setPrompt("ESCANEAR");
+        intent.setCameraId(0);
+        intent.setBeepEnabled(true);
+        intent.setBarcodeImageEnabled(false);
+        intent.initiateScan();
+    }
 
     @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        IntentResult result = IntentIntegrator.parseActivityResult(requestCode,resultCode,data);
+
+        if(result != null){
+            if(result.getContents()== null){
+                Toast.makeText(getContext(), "Cancelaste el escaneo", Toast.LENGTH_SHORT).show();
+            }else {
+                tvBarCode.setText(result.getContents().toString());
+            }
+        }else {
+            super.onActivityResult(requestCode, resultCode, data);
+        }
+    }
+
+
+    /*  @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
         super.onActivityResult(requestCode, resultCode, data);
         IntentResult result= IntentIntegrator.parseActivityResult(requestCode,resultCode,data);
             if(result != null)
                 if (result.getContents() != null){
-                    tvBarCode.setText("Su codigo de barra es: " + result.getContents());
+                    tvBarCode.setText(result.getContents());
                 }else{
                     tvBarCode.setText("Error al escanear el codigo de barras");
                 }
-    }
-
+    }*/
+/*
     public View.OnClickListener mOnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -92,7 +124,7 @@ public class barcode extends Fragment {
                     break;
             }
         }
-    };
+    };*/
 
 
 
