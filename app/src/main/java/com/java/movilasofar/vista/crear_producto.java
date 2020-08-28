@@ -71,20 +71,7 @@ public class crear_producto extends Fragment {
     }
 
     private void llenarProveedor(){
-     /*   String url = "http://192.168.1.5:8000/Asofarphp/producto/consultas/Proveedor.php";
-        cliente.post(url, new AsyncHttpResponseHandler() {
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                if (statusCode == 200){
-                    cargarProveedor(new String(responseBody));
-                }
-            }
 
-            @Override
-            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-
-            }
-        });*/
 
        RequestQueue queue = Volley.newRequestQueue(getActivity());
         StringRequest stringRequest = new StringRequest(Request.Method.GET, "http://192.168.1.5:8000/Asofarphp/producto/consultas/Proveedor.php", new Response.Listener<String>() {
@@ -114,23 +101,7 @@ public class crear_producto extends Fragment {
 
 
     private void cargarProveedor(JSONArray jsonArray){
-       /* ArrayList<Proveedor> lista = new ArrayList<Proveedor>();
-        try {
-            JSONArray jsonArreglo = new JSONArray(respuesta);
 
-            for (int i =0; i< jsonArreglo.length(); i++){
-                Proveedor p = new Proveedor();
-                p.setNombre(jsonArreglo.getJSONObject(i).getString("nombre"));
-
-                lista.add(p);
-            }
-            ArrayAdapter<Proveedor> a = new ArrayAdapter<Proveedor>(getActivity(), android.R.layout.simple_dropdown_item_1line, lista);
-
-            spinnerProveedor.setAdapter(a);
-        }catch (Exception e){
-            e.printStackTrace();
-
-        } */
 
        listaProveedor_id = new ArrayList<String>();
         listarProveedor_nombre = new ArrayList<String>();
