@@ -23,8 +23,9 @@
         android:layout_width="178dp"
         android:layout_height="25dp"
         android:layout_marginTop="100dp"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="270dp" />
+        android:layout_marginEnd="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/categoria"
@@ -41,7 +42,7 @@
         android:layout_width="178dp"
         android:layout_height="25dp"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="152dp"
+        android:layout_marginEnd="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/codigoProlabel" />
 
@@ -50,7 +51,7 @@
         android:layout_width="178dp"
         android:layout_height="25dp"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="152dp"
+        android:layout_marginEnd="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtCategoria" />
 
@@ -59,7 +60,7 @@
         android:layout_width="178dp"
         android:layout_height="25dp"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="152dp"
+        android:layout_marginEnd="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtSubcategoria" />
 
@@ -101,7 +102,7 @@
         android:layout_width="178dp"
         android:layout_height="25dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="152dp"
+        android:layout_marginEnd="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtArticulo" />
 
@@ -121,7 +122,7 @@
         android:layout_width="178dp"
         android:layout_height="25dp"
         android:layout_marginTop="14dp"
-        android:layout_marginEnd="152dp"
+        android:layout_marginEnd="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtPresentacion" />
 
@@ -141,7 +142,7 @@
         android:layout_width="178dp"
         android:layout_height="25dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="152dp"
+        android:layout_marginEnd="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtMedida" />
 
@@ -161,7 +162,7 @@
         android:layout_width="178dp"
         android:layout_height="25dp"
         android:layout_marginTop="14dp"
-        android:layout_marginEnd="152dp"
+        android:layout_marginEnd="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtProducto" />
 
@@ -190,7 +191,7 @@
         android:layout_width="100dp"
         android:layout_height="25dp"
         android:layout_marginTop="14dp"
-        android:layout_marginEnd="152dp"
+        android:layout_marginEnd="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtProveedor" />
 
@@ -218,7 +219,7 @@
         android:layout_width="100dp"
         android:layout_height="25dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="152dp"
+        android:layout_marginEnd="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_cant_empaque" />
 
@@ -236,8 +237,7 @@
         android:id="@+id/btnSync"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="132dp"
+        android:layout_marginEnd="100dp"
         android:text="Sincronizar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/btnGuardar" />

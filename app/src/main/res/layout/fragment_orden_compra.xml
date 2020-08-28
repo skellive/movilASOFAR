@@ -24,7 +24,7 @@
         android:layout_width="178dp"
         android:layout_height="25dp"
         android:layout_marginTop="100dp"
-        android:layout_marginEnd="152dp"
+        android:layout_marginEnd="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,9 +32,8 @@
         android:id="@+id/fecha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="22dp"
         android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
         android:text="fecha:"
         app:layout_constraintEnd_toStartOf="@+id/txtfecha"
         app:layout_constraintTop_toBottomOf="@+id/FormPago" />
@@ -44,12 +43,13 @@
         android:id="@+id/txtfecha"
         android:layout_width="178dp"
         android:layout_height="25dp"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="152dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="80dp"
         android:ems="10"
         android:inputType="date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtFormPago" />
+
     <TextView
         android:id="@+id/observacion"
         android:layout_width="wrap_content"
@@ -66,7 +66,7 @@
         android:layout_width="178dp"
         android:layout_height="25dp"
         android:layout_marginTop="14dp"
-        android:layout_marginEnd="152dp"
+        android:layout_marginEnd="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtfecha" />
 
@@ -84,8 +84,8 @@
         android:id="@+id/txtprecio"
         android:layout_width="50dp"
         android:layout_height="18dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="328dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="250dp"
         android:ems="10"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -106,7 +106,7 @@
         android:layout_width="50dp"
         android:layout_height="18dp"
         android:layout_marginTop="18dp"
-        android:layout_marginEnd="152dp"
+        android:layout_marginEnd="80dp"
         android:ems="10"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
@@ -127,7 +127,7 @@
         android:layout_width="178dp"
         android:layout_height="25dp"
         android:layout_marginTop="25dp"
-        android:layout_marginEnd="152dp"
+        android:layout_marginEnd="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtcantidad" />
 
@@ -146,7 +146,7 @@
         android:layout_width="178dp"
         android:layout_height="25dp"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="152dp"
+        android:layout_marginEnd="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtFechaCad" />
 
@@ -176,7 +176,7 @@
         android:layout_width="91dp"
         android:layout_height="17dp"
         android:layout_marginTop="15dp"
-        android:layout_marginEnd="152dp"
+        android:layout_marginEnd="80dp"
         android:text="Recibido"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtbodega" />
@@ -196,7 +196,7 @@
         android:layout_width="70dp"
         android:layout_height="18dp"
         android:layout_marginTop="44dp"
-        android:layout_marginEnd="240dp"
+        android:layout_marginEnd="180dp"
         android:ems="10"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -217,7 +217,7 @@
         android:layout_width="70dp"
         android:layout_height="18dp"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="248dp"
+        android:layout_marginEnd="180dp"
         android:ems="10"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -227,12 +227,12 @@
         android:id="@+id/btnSave"
         android:layout_width="121dp"
         android:layout_height="46dp"
-        android:layout_marginStart="112dp"
+        android:layout_marginStart="72dp"
         android:text="Guardar"
         app:layout_constraintBottom_toBottomOf="@+id/btnSync2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/list_producto"
-        app:layout_constraintVertical_bias="0.578" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/btnSync2"
@@ -247,23 +247,26 @@
 
     <Button
         android:id="@+id/btnAgreProducts"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="201dp"
+        android:layout_height="35dp"
         android:text="AGREGAR PRODUCTOS"
-        app:layout_constraintBottom_toTopOf="@+id/list_producto"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.528"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txttotal" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.772" />
 
     <ListView
         android:id="@+id/list_producto"
-        android:layout_width="414dp"
-        android:layout_height="188dp"
-        android:layout_marginTop="48dp"
+        android:layout_width="412dp"
+        android:layout_height="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.41"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txttotal" />
+        app:layout_constraintTop_toBottomOf="@+id/btnAgreProducts"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
